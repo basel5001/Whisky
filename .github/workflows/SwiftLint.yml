@@ -11,10 +11,7 @@ on:
 
 jobs:
   SwiftLint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: SwiftLint
-        uses: norio-nomura/action-swiftlint@3.2.1
-        with:
-          args: --strict
+    uses: basel5001/githubinfra/.github/workflows/linting.yml@main
+    with:
+      linter: swiftlint
+      extra-args: "--strict"

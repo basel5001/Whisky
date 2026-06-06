@@ -4,6 +4,9 @@ on:
   release:
     types: [published]
 
+permissions:
+  contents: read
+
 jobs:
   notify:
     uses: basel5001/githubinfra/.github/workflows/release-notify.yml@main
@@ -16,6 +19,8 @@ jobs:
   homebrew:
     runs-on: ubuntu-latest
     needs: notify
+    permissions:
+      contents: read
     steps:
       - name: Update Homebrew Cask
         uses: macauley/action-homebrew-bump-cask@v1

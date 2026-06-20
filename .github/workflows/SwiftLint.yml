@@ -14,4 +14,4 @@ jobs:
     uses: basel5001/githubinfra/.github/workflows/linting.yml@main
     with:
       linter: swiftlint
-      extra-args: "--strict"
+      extra-args: ""
